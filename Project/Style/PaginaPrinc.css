@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+:root {
+    --font01: "Passion One", sans-serif;
+    --font02: "Sriracha", cursive;
+    --Color01: #d8af7da4;
+    --Color02: #763f21c7;
+    --Color03: #D2A27A;
+    --Color04: #F8E1CF;
+    --Color05: #b47755c7;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2e;
+    color: white;
+    padding-top: 80px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2a2a3a;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Seção esquerda (botões de tema e idioma) */
+.left-section {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estiliza os botões */
+button {
+    background-color: #444;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button img {
+    width: 20px;
+    height: auto;
+}
+
+/* Menu de navegação */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Modo claro */
+.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.light-mode .navbar {
+    background-color: #f0f0f0;
+}
+
+.light-mode .nav-links a {
+    color: #000000;
+}
+
+.light-mode button {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Corpo */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.About {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    text-align: left;
+    opacity: 1;
+    transform: translateY(30px);
+    transition: opacity 3s ease-in-out, transform 3s ease-in-out;
+    animation: fadeInUp 1s ease-out;
+    height: 600px
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.About img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .About {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .About img {
+        max-width: 200px;
+    }
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #2a2a3a;
+    color: white;
+}
